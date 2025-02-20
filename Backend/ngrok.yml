@@ -1,0 +1,9 @@
+version: "2"
+authtoken: auhttoken
+
+tunnels:
+  my-tunnel-name:
+    proto: http
+    addr: addr
+    inspect: false
+    domain: domain

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chat with Career Chatbot</h1>
+        <p>Please note: This AI is running on a small system and was designed for research purposes. The response time
+            may be rather long.</p>
+        <div id="consent-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Participant Information Sheet and Consent Form</h2>
+                <p>Please read the following information and provide your consent to proceed.</p>
+                <iframe width="640px" height="480px"
+                    src="https://forms.office.com/Pages/ResponsePage.aspx?id=YwceYzMV60elzQRXvuWUTl_d1HGHmdRCoWmo8XVA2spUMU1OVlRJS1lNVUY2Q05CWjVSUVlSQlA0RS4u&embed=true"
+                    frameborder="0" marginwidth="0" marginheight="0"
+                    style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
+                    mozallowfullscreen msallowfullscreen> </iframe>
+                <button id="consent-button" onclick="checkGoogleFormSubmission()">I Agree</button>
+            </div>
+        </div>
+        <div class="chat-box" id="chat-box" style="display:none;">
+            <div id="messages"></div>
+            <div id="loading-spinner" class="spinner"></div>
+        </div>
+        <input type="text" id="query-input" placeholder="Type your query here..." style="display:none;">
+        <button id="send-button" onclick="sendQuery()" style="display:none;">Send</button>
+
+        <!-- Resume Upload Section -->
+        <div id="resume-upload" style="display:none;">
+            <input type="file" id="resume-input" accept=".pdf">
+            <button id="resume-upload-button" onclick="uploadResume()">Upload Resume</button>
+        </div>
+
+        <!-- Feedback Form Section-->
+        <div class="feedback-form" id="feedback-form">
+            <iframe width="640px" height="480px"
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=YwceYzMV60elzQRXvuWUTl_d1HGHmdRCoWmo8XVA2spUOUJYNEdXWkQ3R0FHTk5KRTlFOThPWlM4OS4u&embed=true"
+                frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+                allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="static/scripts.js"></script>
+</body>
+
+</html>
